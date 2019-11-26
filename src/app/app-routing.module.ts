@@ -6,12 +6,14 @@ import { ProductdetailPage1Component } from './products/product-detail/productde
 import { ProductSummaryComponent } from './products/product-summary/product-summary.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { ProductdetailPage2Component } from './products/product-detail/productdetail-page2/productdetail-page2.component';
+import { BooksComponent } from './books/books.component';
+import { BookDetailComponent } from './books/book-detail/book-detail.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  // { path: 'products', component: ProductsComponent },
+  // Products
   {
     path: 'products',
     children: [
@@ -25,14 +27,16 @@ const routes: Routes = [
         ]
       },
       { path: 'product-summary', component: ProductSummaryComponent },
-      // { path: '',
-      // loadChildren: () => import('./student/student.module').then(m => m.StudentModule) },
-      {
-        path: '',
-        loadChildren: './student/student.module#StudentModule',
-      }
     ]
   },
+  // students
+  {
+    path: '',
+    loadChildren: './student/student.module#StudentModule',
+  },
+  //books
+  { path: 'books', component:BooksComponent },
+  { path: 'book-detail/:id', component:BookDetailComponent },
 ];
 
 @NgModule({

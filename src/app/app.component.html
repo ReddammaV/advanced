@@ -1,6 +1,6 @@
 <!-- nav -->
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-  <a class="navbar-brand"  routerLink="home" routerLinkActive="active">Angular Basics</a>
+  <a class="navbar-brand" routerLink="home" routerLinkActive="active">Angular Basics</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
       </li>
-      <!-- All Directives start -->
+      <!-- Routing start -->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -19,21 +19,36 @@
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <!-- <li><a class="dropdown-item" href="#">Action</a></li> -->
-          <!-- Routing -->
+          <!-- list Routing -->
           <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Child Route</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" routerLink="/products" routerLinkActive="active">Products</a></li>
-              <li><a class="dropdown-item" routerLink="/student" routerLinkActive="active">Student with lazyloading module</a></li>
+              <li><a class="dropdown-item" routerLink="/student" routerLinkActive="active">Student with lazyloading
+                  module</a></li>
             </ul>
           </li>
-          <!-- Routing -->
-
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li> -->
-
+          <!-- list Routing -->
         </ul>
       </li>
+      <!-- Routing end -->
+      <!-- Services start -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Services
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <!-- <li><a class="dropdown-item" href="#">Action</a></li> -->
+          <!-- list Services -->
+          <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Parametrized Route</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/books" routerLinkActive="active">Books</a></li>
+            </ul>
+          </li>
+          <!-- list Services -->
+        </ul>
+      </li>
+      <!-- Services end -->
     </ul>
   </div>
 </nav>

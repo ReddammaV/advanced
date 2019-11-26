@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="jumbotron">
+            <h3 [ngClass]="{'text-danger' : book.name=='Java'}">{{book.name}}</h3>
+            <h6 [ngClass]="{'text-info' : book.price=='950','text-primary' : book.price=='800','text-danger' : book.price=='682'}">Rs. {{book.price}}/-</h6>
+        </div>
+
+        <div>
+            <p>{{book.description}}</p>
+        </div>
+    </div>
+</div>

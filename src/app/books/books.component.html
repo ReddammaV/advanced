@@ -1,0 +1,15 @@
+<h3>Books List</h3>
+<div class="row">
+    <div class="col-md-3" *ngFor="let book of books">
+        <div class="card mb-5">
+            <div class="card-body">
+                <h5>Name: {{book.name}}</h5>
+                <h5>Price {{book.price}}</h5>
+            </div>
+            <div class="card-footer bg-primary text-white text-center cursor">
+                <a [routerLink]="['/book-detail', book.id]">Take a Look</a>
+            </div>
+        </div>
+    </div>
+</div>
+

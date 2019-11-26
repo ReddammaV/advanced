@@ -10,6 +10,9 @@ import { ProductdetailPage1Component } from './products/product-detail/productde
 import { ProductdetailPage2Component } from './products/product-detail/productdetail-page2/productdetail-page2.component';
 import { HomeComponent } from './home/home.component';
 import { StudentModule } from './student/student.module';
+import { BooksComponent } from './books/books.component';
+import { BookDetailComponent } from './books/book-detail/book-detail.component';
+import { BookService } from './services/book.service';
 
 @NgModule({
   declarations: [
@@ -19,14 +22,16 @@ import { StudentModule } from './student/student.module';
     ProductSummaryComponent,
     ProductdetailPage1Component,
     ProductdetailPage2Component,
-    HomeComponent
+    HomeComponent,
+    BooksComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StudentModule
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
