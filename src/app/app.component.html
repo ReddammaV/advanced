@@ -11,6 +11,11 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
       </li>
+      <!-- canActivate -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="dashboard" routerLinkActive="active">Dashboard</a>
+      </li>
+      <!-- canActivate -->
       <!-- Routing start -->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -49,6 +54,47 @@
         </ul>
       </li>
       <!-- Services end -->
+       <!-- canDeactivate -->
+       <li class="nav-item">
+        <a class="nav-link" routerLink="candeactivate" routerLinkActive="active">CanDeactivate</a>
+      </li>
+      <!-- canDeactivate -->
+      <!-- loading start -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Loading
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item"  routerLink="customers" routerLinkActive="active">Eager Loading</a></li>
+          <li><a class="dropdown-item"  routerLink="persons" routerLinkActive="active">Lazy Loading</a></li>
+          <li><a class="dropdown-item"  routerLink="custompreloading" routerLinkActive="active">Custom Pre Loading</a></li>
+        </ul>
+      </li>
+      <!-- loading end -->
+      <!-- In Memory webapi start -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          In Memory Webapi
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item"  routerLink="memoryapi" routerLinkActive="active">In Memory Webapi</a></li>
+        </ul>
+      </li>
+      <!-- In Memory webapi end -->
+      <!-- Forms start -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Forms
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item"  routerLink="templatedriven" routerLinkActive="active">Template Driven Forms</a></li>
+          <li><a class="dropdown-item"  routerLink="modeldriven" routerLinkActive="active">Model Driven (Reactive) Forms</a></li>
+        </ul>
+      </li>
+      <!-- Forms end -->
     </ul>
   </div>
 </nav>

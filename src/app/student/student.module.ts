@@ -14,4 +14,8 @@ import { StudentSummaryComponent } from './student-summary/student-summary.compo
     StudentRoutingModule
   ]
 })
-export class StudentModule { }
+export class StudentModule { 
+  constructor() {
+    console.log("Student Module - Preloading")
+  }
+}

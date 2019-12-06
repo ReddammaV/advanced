@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, NoPreloading, PreloadAllModules } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { HomeComponent } from './home/home.component';
 import { ProductdetailPage1Component } from './products/product-detail/productdetail-page1/productdetail-page1.component';
@@ -8,6 +8,14 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
 import { ProductdetailPage2Component } from './products/product-detail/productdetail-page2/productdetail-page2.component';
 import { BooksComponent } from './books/books.component';
 import { BookDetailComponent } from './books/book-detail/book-detail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CanactivateGuard } from './guards/canactivate.guard';
+import { CandeactivateComponent } from './candeactivate/candeactivate.component';
+import { DeactivateGuard } from './guards/deactivate.guard';
+import { CustompreloadingService } from './services/custompreloading.service';
+import { InmemoryComponent } from './inmemory/inmemory.component';
+import { TemplatedrivenComponent } from './forms/templatedriven/templatedriven.component';
+import { ModeldrivenComponent } from './forms/modeldriven/modeldriven.component';
 
 
 const routes: Routes = [
@@ -31,16 +39,36 @@ const routes: Routes = [
   },
   // students
   {
-    path: '',
+    path: 'student',
     loadChildren: './student/student.module#StudentModule',
+    data: { preload: true }
+    // canActivate: [CanactivateGuard]
   },
   //books
-  { path: 'books', component:BooksComponent },
-  { path: 'book-detail/:id', component:BookDetailComponent },
+  { path: 'books', component: BooksComponent },
+  { path: 'book-detail/:id', component: BookDetailComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [CanactivateGuard] },
+  { path: 'candeactivate', component: CandeactivateComponent, canDeactivate: [DeactivateGuard] },
+  //loading
+  { path: 'customers', loadChildren: () => import('./customers/customers.module').then(c => c.CustomersModule) },
+  { path: 'persons', loadChildren: () => import('./persons/persons.module').then(c => c.PersonsModule) },
+  { path: 'custompreloading', loadChildren: () => import('./preloading/preloading.module').then(c => c.PreloadingModule), data: { preload: true, delay: true } },
+  //observables,subscribe and in memory webapi
+  { path:'memoryapi', component: InmemoryComponent },
+  // forms
+  { path:'templatedriven', component: TemplatedrivenComponent },
+  { path:'modeldriven', component: ModeldrivenComponent },
+
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,
+    // { preloadingStrategy: NoPreloading }
+    // { preloadingStrategy: PreloadAllModules }
+    { preloadingStrategy: CustompreloadingService }
+  )
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,0 +1,47 @@
+<h1>Observables and Subscribe</h1>
+
+<h2>Observables + Subscribe + NgFor</h2>
+<ul>
+  <li *ngFor="let data of myBooks">
+    {{data.id}} | {{data.name}} | {{data.description}}
+  </li>
+</ul>
+
+<h2>Observables + Async + NgFor</h2>
+<ul>
+  <li *ngFor="let data of myBooksAsync | async">
+    {{data.id}} | {{data.name}} | {{data.description}}
+  </li>
+</ul>
+
+<h2>Observables + Async With ngIf</h2>
+<ul>
+  <ng-template ngFor let-data [ngForOf]="myBooksAsync | async">
+    <ng-template [ngIf]="data.name=='Angular 8'">
+      <li>
+        {{data.id}} | {{data.name}} | {{data.description}}
+      </li>
+    </ng-template>
+  </ng-template>
+</ul>
+
+<h2>Observables + Subscribe + NgIf</h2>
+<div *ngIf="mybestBook else loader">
+  {{mybestBook.id}} | {{mybestBook.name}} | {{mybestBook.description}}
+</div>
+
+<ng-template #loader>
+  <!-- <img src="../assets/bookgif.gif" /> -->
+  Loading...
+</ng-template>
+
+
+<h2>Observables + Async + NgIf</h2>
+<div *ngIf="mybestBookAsync | async as data; else loader1">
+  {{data.id}} | {{data.name}} | {{data.description}}
+</div>
+
+<ng-template #loader1>
+  <!-- <img src="../assets/bookgif.gif" /> -->
+  Loading...
+</ng-template>
