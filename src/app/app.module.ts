@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 //Modules
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { CustomersModule } from './customers/customers.module';
@@ -28,6 +28,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { InmemoryComponent } from './inmemory/inmemory.component';
 import { TemplatedrivenComponent } from './forms/templatedriven/templatedriven.component';
 import { ModeldrivenComponent } from './forms/modeldriven/modeldriven.component';
+import { FormArrayComponent } from './forms/form-array/form-array.component';
+import { ValuestatusComponent } from './forms/valuestatus/valuestatus.component';
+import { NestedformComponent } from './forms/nestedform/nestedform.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { ModeldrivenComponent } from './forms/modeldriven/modeldriven.component'
     DashboardComponent,
     InmemoryComponent,
     TemplatedrivenComponent,
-    ModeldrivenComponent
+    ModeldrivenComponent,
+    FormArrayComponent,
+    ValuestatusComponent,
+    NestedformComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +60,8 @@ import { ModeldrivenComponent } from './forms/modeldriven/modeldriven.component'
     HttpClientModule,
     InMemoryWebApiModule,
     InMemoryWebApiModule.forRoot(Webapi),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
 
   ],

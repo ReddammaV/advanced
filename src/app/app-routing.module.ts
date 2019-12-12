@@ -16,6 +16,9 @@ import { CustompreloadingService } from './services/custompreloading.service';
 import { InmemoryComponent } from './inmemory/inmemory.component';
 import { TemplatedrivenComponent } from './forms/templatedriven/templatedriven.component';
 import { ModeldrivenComponent } from './forms/modeldriven/modeldriven.component';
+import { FormArrayComponent } from './forms/form-array/form-array.component';
+import { ValuestatusComponent } from './forms/valuestatus/valuestatus.component';
+import { NestedformComponent } from './forms/nestedform/nestedform.component';
 
 
 const routes: Routes = [
@@ -58,6 +61,9 @@ const routes: Routes = [
   // forms
   { path:'templatedriven', component: TemplatedrivenComponent },
   { path:'modeldriven', component: ModeldrivenComponent },
+  { path:'formarray', component: FormArrayComponent },
+  { path:'valuestatus', component: ValuestatusComponent },
+  { path:'nestedforms', component: NestedformComponent },
 
 
 ];
