@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angular/forms';
-import { NumericCharactersvalidator, Emailvalidator } from 'src/app/models/emailvalidator';
+import { NumericCharactersvalidator, Emailvalidator } from '../../models/emailvalidator';
 
 @Component({
   selector: 'app-customvalidator',
