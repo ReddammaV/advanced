@@ -19,6 +19,9 @@ import { ModeldrivenComponent } from './forms/modeldriven/modeldriven.component'
 import { FormArrayComponent } from './forms/form-array/form-array.component';
 import { ValuestatusComponent } from './forms/valuestatus/valuestatus.component';
 import { NestedformComponent } from './forms/nestedform/nestedform.component';
+import { CustomvalidatorComponent } from './forms/customvalidator/customvalidator.component';
+import { ConditionalvalidatorComponent } from './forms/conditionalvalidator/conditionalvalidator.component';
+import { GethttpComponent } from './http/gethttp/gethttp.component';
 
 
 const routes: Routes = [
@@ -64,6 +67,9 @@ const routes: Routes = [
   { path:'formarray', component: FormArrayComponent },
   { path:'valuestatus', component: ValuestatusComponent },
   { path:'nestedforms', component: NestedformComponent },
+  { path:'customvalidator', component: CustomvalidatorComponent },
+  { path:'conditionalvalidator', component: ConditionalvalidatorComponent },
+  { path:'get', component: GethttpComponent },
 
 
 ];

@@ -8,6 +8,7 @@ import { Book } from '../interfaces/book';
 })
 export class InmemoryService {
   bookUrl = "/api/books";
+  msgUrl = "/api/message";
 
   constructor(private http: HttpClient) { }
   //to get all data
@@ -18,5 +19,15 @@ export class InmemoryService {
   //to get by id
   getBookFromStrorById(id: number): Observable<Book> {
     return this.http.get<Book>(this.bookUrl + '/' + id);
+  }
+
+  //for message data
+  getMessage(): Observable<string> {
+    return this.http.get<string>(this.msgUrl);
+  }
+
+  //httpHeaders 
+  filterBooks(name: string, description: string): Observable<Book[]> {
+    return this.http.get<Book[]>(this.bookUrl + '?name=' + name + '&description=' + description);
   }
 }

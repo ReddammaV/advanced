@@ -2,3 +2,7 @@
 .cursor {
     cursor: pointer;
 }
+input.ng-invalid.ng-touched {  
+    border: 1px solid #dc3545!important;  
+}
+ 

@@ -10,7 +10,10 @@ export class Webapi implements InMemoryDbService {
             { id: 3, name: "C#", price: "950", description: "C# Books" },
             { id: 4, name: "Java", price: "780", description: "Java Books" },
             { id: 5, name: "php", price: "682", description: "php Books" },
+            { id: 6, name: "Angular 8", price: "800", description: "Angular 8 Books" },
         ];
-        return { books : bookDetails };
+        //Text Data
+        let welcomeMsg = "Welcome to sahosoft Angular Class.";
+        return { books : bookDetails, message: welcomeMsg };
     }
 }

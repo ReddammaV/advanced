@@ -54,8 +54,8 @@
         </ul>
       </li>
       <!-- Services end -->
-       <!-- canDeactivate -->
-       <li class="nav-item">
+      <!-- canDeactivate -->
+      <li class="nav-item">
         <a class="nav-link" routerLink="candeactivate" routerLinkActive="active">CanDeactivate</a>
       </li>
       <!-- canDeactivate -->
@@ -66,9 +66,10 @@
           Loading
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item"  routerLink="customers" routerLinkActive="active">Eager Loading</a></li>
-          <li><a class="dropdown-item"  routerLink="persons" routerLinkActive="active">Lazy Loading</a></li>
-          <li><a class="dropdown-item"  routerLink="custompreloading" routerLinkActive="active">Custom Pre Loading</a></li>
+          <li><a class="dropdown-item" routerLink="customers" routerLinkActive="active">Eager Loading</a></li>
+          <li><a class="dropdown-item" routerLink="persons" routerLinkActive="active">Lazy Loading</a></li>
+          <li><a class="dropdown-item" routerLink="custompreloading" routerLinkActive="active">Custom Pre Loading</a>
+          </li>
         </ul>
       </li>
       <!-- loading end -->
@@ -79,7 +80,7 @@
           In Memory Webapi
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item"  routerLink="memoryapi" routerLinkActive="active">In Memory Webapi</a></li>
+          <li><a class="dropdown-item" routerLink="memoryapi" routerLinkActive="active">In Memory Webapi</a></li>
         </ul>
       </li>
       <!-- In Memory webapi end -->
@@ -90,14 +91,33 @@
           Forms
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item"  routerLink="templatedriven" routerLinkActive="active">Template Driven Forms</a></li>
-          <li><a class="dropdown-item"  routerLink="modeldriven" routerLinkActive="active">Model Driven (Reactive) Forms</a></li>
-          <li><a class="dropdown-item"  routerLink="valuestatus" routerLinkActive="active">valueChanges and statusChanges</a></li>
-          <li><a class="dropdown-item"  routerLink="formarray" routerLinkActive="active">Form Array</a></li>
-          <li><a class="dropdown-item"  routerLink="nestedforms" routerLinkActive="active">Nested FormGroup</a></li>
+          <li><a class="dropdown-item" routerLink="templatedriven" routerLinkActive="active">Template Driven Forms</a>
+          </li>
+          <li><a class="dropdown-item" routerLink="modeldriven" routerLinkActive="active">Model Driven (Reactive)
+              Forms</a></li>
+          <li><a class="dropdown-item" routerLink="valuestatus" routerLinkActive="active">valueChanges and
+              statusChanges</a></li>
+          <li><a class="dropdown-item" routerLink="formarray" routerLinkActive="active">Form Array</a></li>
+          <li><a class="dropdown-item" routerLink="nestedforms" routerLinkActive="active">Nested FormGroup</a></li>
+          <li><a class="dropdown-item" routerLink="customvalidator" routerLinkActive="active">Custom Validator</a></li>
+          <li><a class="dropdown-item" routerLink="conditionalvalidator" routerLinkActive="active">Conditional
+              Validator</a></li>
         </ul>
       </li>
       <!-- Forms end -->
+      <!-- HTTP start -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          HTTP
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item" routerLink="get" routerLinkActive="active">Http GET Request</a>
+          </li>
+    
+        </ul>
+      </li>
+      <!-- HTTP end -->
     </ul>
   </div>
 </nav>

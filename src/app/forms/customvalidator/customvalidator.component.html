@@ -1,0 +1,50 @@
+<h2>Custom Validators - Model Driven Forms</h2>
+<!-- <p><b>required and ngmodel with template reference variable(#name='ngModel') is must for template driven forms</b></p> -->
+
+<form [formGroup]="regForm" (ngSubmit)="regSubmit(regForm)" autocomplete="off">
+  <div class="form-group">
+    <label for="fname">First Name</label>
+    <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name"
+      formControlName="fname" />
+    <!-- Validations start -->
+    <small class="form-text text-danger" *ngIf="regForm.controls['fname'].touched  && !regForm.controls['fname'].valid">
+      <span *ngIf="regForm.controls['fname'].hasError('required')">
+        First Name is required !!
+      </span>
+      <span *ngIf="formError.fname">{{formError.fname}}</span>
+    </small>
+    <!-- Validations end -->
+  </div>
+
+  <!-- email -->
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"
+      formControlName="email" />
+    <!-- validation start -->
+    <small class="form-text text-danger" *ngIf="regForm.controls['email'].touched  && !regForm.controls['email'].valid">
+      <span *ngIf="regForm.controls['email'].hasError('required')">
+        Email is required !!
+      </span>
+      <span *ngIf="formError.email">{{formError.email}}</span>
+    </small>
+    <!-- validation end -->
+  </div>
+
+  <!-- mobile -->
+  <div class="form-group">
+    <label for="mobile">mobile address</label>
+    <input type="mobile" class="form-control" id="mobile" name="mobile" placeholder="Enter mobile"
+      formControlName="mobile" />
+    <!-- validation start -->
+    <small class="form-text text-danger" *ngIf="regForm.controls['mobile'].touched  && !regForm.controls['mobile'].valid">
+      <span *ngIf="regForm.controls['mobile'].hasError('required')">
+        mobile is required !!
+      </span>
+      <span *ngIf="formError.mobile">{{formError.mobile}}</span>
+    </small>
+    <!-- validation end -->
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!regForm.valid">Submit</button>
+</form>

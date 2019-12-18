@@ -31,6 +31,10 @@ import { ModeldrivenComponent } from './forms/modeldriven/modeldriven.component'
 import { FormArrayComponent } from './forms/form-array/form-array.component';
 import { ValuestatusComponent } from './forms/valuestatus/valuestatus.component';
 import { NestedformComponent } from './forms/nestedform/nestedform.component';
+import { CustomvalidatorComponent } from './forms/customvalidator/customvalidator.component';
+import { ConditionalvalidatorComponent } from './forms/conditionalvalidator/conditionalvalidator.component';
+import { GethttpComponent } from './http/gethttp/gethttp.component';
+import { PosthttpComponent } from './http/posthttp/posthttp.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,11 @@ import { NestedformComponent } from './forms/nestedform/nestedform.component';
     ModeldrivenComponent,
     FormArrayComponent,
     ValuestatusComponent,
-    NestedformComponent
+    NestedformComponent,
+    CustomvalidatorComponent,
+    ConditionalvalidatorComponent,
+    GethttpComponent,
+    PosthttpComponent
   ],
   imports: [
     BrowserModule,

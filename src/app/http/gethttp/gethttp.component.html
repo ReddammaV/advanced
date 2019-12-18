@@ -1,0 +1,40 @@
+<h2>gethttp works!</h2>
+
+<!-- for json data -->
+<h4>Requesting Json Data Using httpClient.get() with subscribe</h4>
+<ul>
+  <li *ngFor="let data of books">
+    {{data.id}} | {{data.name}} | {{data.description}}
+  </li>
+</ul>
+
+
+<h4>Requesting Json Data Using httpClient.get() with async</h4>
+<ul>
+  <li *ngFor="let data of booksasync | async">
+    {{data.id}} | {{data.name}} | {{data.description}}
+  </li>
+</ul>
+
+<!-- for message -->
+<h4>Requesting Text Data Using httpClient.get() with subscribe</h4>
+Message : {{message}}
+
+<h4>Requesting Text Data Using httpClient.get() with Async</h4>
+Message: {{messageasync | async  }}
+
+
+<!-- for filter -->
+<h4>Filter data using Json Data Using httpClient.get() with subscribe</h4>
+<ul>
+  <li *ngFor="let data of booksfiltered">
+    {{data.id}} | {{data.name}} | {{data.description}}
+  </li>
+</ul>
+
+<h4>Filter data using Json Data Using httpClient.get() with Async</h4>
+<ul>
+  <li *ngFor="let data of booksfilteredasync | async">
+    {{data.id}} | {{data.name}} | {{data.description}}
+  </li>
+</ul>

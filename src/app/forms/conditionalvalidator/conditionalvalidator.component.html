@@ -1,0 +1,99 @@
+<h2>Conditional Validation - Model Driven Forms</h2>
+<!-- <p><b>required and ngmodel with template reference variable(#name='ngModel') is must for template driven forms</b></p> -->
+
+<form [formGroup]="regForm" (ngSubmit)="regSubmit(regForm)" autocomplete="off">
+
+  <!-- firstname -->
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name"
+      formControlName="firstName" />
+    <!-- Validations start -->
+    <small *ngIf="regForm.controls['firstName'].touched && !regForm.controls['firstName'].valid"
+      class="form-text text-danger">
+
+      <!-- Fore Required Validation -->
+      <span *ngIf="regForm.controls['firstName'].hasError('required')" class="form-text text-danger">Enter First
+        Name.</span>
+
+      <!-- Fore minlength Validation -->
+      <span *ngIf="regForm.controls['firstName'].hasError('minlength')" class="form-text text-danger">Minlength is
+        5.</span>
+
+      <!-- Fore maxlength Validation -->
+      <span *ngIf="regForm.controls['firstName'].hasError('maxlength')" class="form-text text-danger">Maxlength is
+        10.</span>
+    </small>
+    <!-- Validations end -->
+  </div>
+  <!-- firstname -->
+
+  <!-- lastname -->
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter Last Name"
+      formControlName="lastName" />
+    <!-- Validations start -->
+    <small *ngIf="regForm.controls['lastName'].touched && !regForm.controls['lastName'].valid"
+      class="form-text text-danger">
+
+      <!-- Fore Required Validation -->
+      <span *ngIf="regForm.controls['lastName'].hasError('required')" class="form-text text-danger">Enter Last
+        Name.</span>
+
+      <!-- Fore minlength Validation -->
+      <span *ngIf="regForm.controls['lastName'].hasError('minlength')" class="form-text text-danger">Minlength is
+        5.</span>
+    </small>
+    <!-- Validations end -->
+  </div>
+  <!-- lastname -->
+
+  <!-- checkbox for email validation -->
+  <div class="form-check mb-3">
+    <input type="checkbox" class="form-check-input" formControlName="subscribe" />
+    <label  class="form-check-label">Email Conditional Validation</label>   
+  </div>
+  <!-- checkbox for email validation -->
+
+  <!-- email -->
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"
+      formControlName="email" />
+    <small *ngIf="regForm.controls['email'].touched && !regForm.controls['email'].valid" class="form-text text-danger">
+
+      <!-- Fore Required Validation -->
+      <span *ngIf="regForm.controls['email'].hasError('required')" class="form-text text-danger">Enter Email
+      </span>
+      <!-- Fore email pattern Validation -->
+      <span *ngIf="regForm.controls['email'].hasError('validEmail')" class="form-text text-danger">Email Invalid
+      </span>
+
+    </small>
+  </div>
+  <!-- email -->
+
+  <!-- mobile -->
+  <div class="form-group">
+    <label for="mobile">Mobile Number</label>
+    <input type="mobile" class="form-control" id="mobile" name="mobile" placeholder="Enter mobile"
+      formControlName="mobile" />
+    <small *ngIf="regForm.controls['mobile'].touched && !regForm.controls['mobile'].valid"
+      class="form-text text-danger">
+
+      <!-- Fore Required Validation -->
+      <span *ngIf="regForm.controls['mobile'].hasError('required')" class="form-text text-danger">Enter Mobile
+        Number
+      </span>
+      <!-- Fore Number Validation -->
+      <span *ngIf="regForm.controls['mobile'].hasError('validNumericCharacters')" class="form-text text-danger">Enter
+        Numbers only
+        Number
+      </span>
+
+    </small>
+  </div>
+  <!-- mobile -->
+  <button type="submit" class="btn btn-primary" [disabled]="!regForm.valid">Submit</button>
+</form>
